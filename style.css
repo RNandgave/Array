@@ -35,7 +35,24 @@
 .rightbot {
   position: fixed;
   bottom: 0;
-  height: 80%;
+  height: 75%;
   width: 50%;
   background-color: red;
+}
+
+.rightup {
+  overflow: scroll;
+  height: 25%;
+}
+
+.rightup > div {
+  height: 25px;
+  display: inline-block;
+  font-size: 12px;
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+  background-color: whitesmoke;
+  border: 5px solid;
+  border-color: #b3a15b #bab7a9 #bab7a9 #fff9db;
+  box-sizing: border-box;
 }
