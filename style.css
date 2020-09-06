@@ -1,0 +1,41 @@
+.wrapper {
+  background-color: ivory;
+  padding: 2px;
+}
+
+.left {
+  position: fixed;
+  width: 50%;
+  left: 0;
+  height: 100%;
+  background-color: wheat;
+}
+
+.leftup {
+  padding: 10px;
+  text-align: center;
+}
+
+.right {
+  position: fixed;
+  width: 50%;
+  left: 50%;
+  height: 100%;
+  background-color: royalblue;
+}
+
+.leftbot {
+  position: fixed;
+  bottom: 0;
+  height: 30%;
+  width: 50%;
+  background-color: rosybrown;
+}
+
+.rightbot {
+  position: fixed;
+  bottom: 0;
+  height: 80%;
+  width: 50%;
+  background-color: red;
+}

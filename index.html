@@ -1,30 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>array search</title>
+    <link rel="stylesheet" href="/style.css" />
+    <meta charset="utf-8" />
+    <title>ARRAYS</title>
   </head>
   <body>
-    <h3>search through array</h3>
-    <form class="container" action="index.html" method="post">
-      <b>enter array elements <br> seperated by ','</b>
-      <input class="array" type="text" name="array1" value="">
-      <br>
-      <button type="button" name="button" onclick="read()">Read</button>
-      <br>
-      <button type="button" name="button" onclick="display()"> DISPLAY </button>
-      <br>
-      SORT METHODS: <br>
-      <select class="sort" name="sortMethods" id="sortMethods">
-        <option value="bubble">Bubble Sort</option>
-        <option value="selection">Selection Sort</option>
-      </select>
-      <button type="button" name="button" onclick="sort()"> sort </button>
-      <br>
-      <input class="number" type="text" name="" value="">
-      <br>
-      <button type="button" name="button" onclick="find()"> Search </button>
-    </form>
+    <div class="wrapper">
+      <div class="left">
+        <div class="leftup">
+          <h2>Operations</h2>
+          <form class="container" action="index.html" method="post">
+            <b> Enter array elements seperated by ','</b>
+            <br />
+            <input class="array" type="text" name="array1" value="" />
+            <br />
+            <button type="button" name="button" onclick="read()">Read</button>
+            <br />
+            <button type="button" name="button" onclick="display()">
+              DISPLAY
+            </button>
+            <br />
+            SORT METHODS: <br />
+            <select class="sort" name="sortMethods" id="sortMethods">
+              <option value="bubble">Bubble Sort</option>
+              <option value="selection">Selection Sort</option>
+            </select>
+            <button type="button" name="button" onclick="sort()">sort</button>
+            <br />
+            <input class="number" type="text" name="" value="" />
+            <br />
+            <button type="button" name="button" onclick="find()">Search</button>
+          </form>
+        </div>
+
+        <div class="leftbot">
+          <h3>Description of the algorithms will go her</h3>
+          e
+        </div>
+      </div>
+      <div class="right">
+        <div class="rightup">
+          <h2>array numbers will be displayed here</h2>
+        </div>
+
+        <div class="rightbot">
+          <h3>GRAPHS WILL GO HERE</h3>
+        </div>
+      </div>
+    </div>
   </body>
   <script type="text/javascript" src="Data/read.js"></script>
   <script type="text/javascript" src="Methods/search.js"></script>
