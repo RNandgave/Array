@@ -9,6 +9,7 @@ function read() {
   for (let i = 0; i < size; i++) {
     data[i] = parseInt(data[i]);
   }
+  display();
 }
 
 function display() {

@@ -7,6 +7,7 @@ function linearSearch(num){
       break;
     }
   }
+  document.getElementById(""+i).style.backgroundColor = "red"
   console.log(flag? `element present at ${i+1}`: "Not found");
 }
 

@@ -7,7 +7,6 @@ function bubbleSort(){
         data[i] = data[j];
         data[j] = temp;
       }
-      setTimeout(display(), 5000);
     }
   }
   display();

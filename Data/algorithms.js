@@ -1,9 +1,9 @@
-const search = {
+const searchAlgorithms = {
   'linear': "Linear Search",
   'binary': " Binary Search",
-},
+};
 
-const sort = {
+const sortAlgorithms = {
   'selection': "SLECTION SORT",
-  'bubble' : "Bubble Sort"
-}
+  'bubble' : "Bubble Sort",
+};
