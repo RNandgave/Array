@@ -57,3 +57,8 @@
   border-color: #b3a15b #bab7a9 #bab7a9 #fff9db;
   box-sizing: border-box;
 }
+
+.methods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

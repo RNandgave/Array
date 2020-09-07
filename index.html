@@ -9,28 +9,46 @@
     <div class="wrapper">
       <div class="left">
         <div class="leftup">
-          <h2>Operations</h2>
-          <form class="container" action="index.html" method="post">
-            <b> Enter array elements seperated by ','</b>
-            <br />
-            <input class="array" type="text" name="array1" value="" />
-            <br />
-            <button type="button" name="button" onclick="read()">Read</button>
-            <br />
-            <button type="button" name="button" onclick="display()">
-              DISPLAY
-            </button>
-            <br />
-            SORT METHODS: <br />
-            <select class="sort" name="sortMethods" id="sortMethods">
-              <option value="bubble">Bubble Sort</option>
-              <option value="selection">Selection Sort</option>
-            </select>
-            <button type="button" name="button" onclick="sort()">sort</button>
-            <br />
-            <input class="number" type="text" name="" value="" />
-            <br />
-            <button type="button" name="button" onclick="find()">Search</button>
+          <div class="input">
+            <h3>Input</h3>
+            <form class="container" action="index.html" method="post">
+              <b> Enter array elements seperated by ','</b>
+              <br />
+              <input class="array" type="text" name="array1" value="" />
+              <button type="button" name="button" onclick="read()">Read</button>
+              <br />
+              <button type="button" name="button" onclick="display()">
+                DISPLAY
+              </button>
+              <br />
+              <br>
+              <br>
+          </div>
+            <div class="methods">
+              <div class="sort">
+                SORT METHODS: <br />
+                Select Algorithm <br>
+                <select class="sortMethods" name="sorting" id="sortM">
+                  <option value="bubble">Bubble Sort</option>
+                  <option value="selection">Selection Sort</option>
+                </select>
+                <button type="button" name="button" onclick="sort()">sort</button>
+              </div>
+              <div class="search">
+                  SEARCH METHODS: <br>
+                  Select algorithms
+                  <select class="searchMethods" name="searching" id="searchM">
+                    <option value="linear">Linear Search</option>
+                    <option value="binary">Binary Searh(Sort it first)</option>
+                  </select>
+                  <br>
+                Enter value to search
+                <br>
+                <input class="number" type="text" name="" value="" />
+                <button type="button" name="button" onclick="search()">Search</button>
+              </div>
+            </div>
+
           </form>
         </div>
 
