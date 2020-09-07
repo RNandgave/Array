@@ -7,15 +7,16 @@ function read() {
   data = data.split(",");
   size = data.length;
   for (let i = 0; i < size; i++) {
-    const square = document.createElement("div");
-    square.setAttribute("id", "gr" + i);
     data[i] = parseInt(data[i]);
-    square.append(data[i]);
-    grid.appendChild(square);
-    squares.push(square);
   }
 }
 
 function display() {
-  console.log(data);
+  grid.innerHTML = "";
+  for (let i = 0; i < data.length; i++) {
+    const square = document.createElement("div");
+    square.setAttribute("id", i);
+    square.append(data[i]);
+    grid.appendChild(square);
+  }
 }
