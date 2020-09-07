@@ -19,4 +19,5 @@ function display() {
     square.append(data[i]);
     grid.appendChild(square);
   }
+  console.log(search);
 }
