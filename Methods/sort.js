@@ -1,23 +1,39 @@
-function bubbleSort(){
-  let temp = null;
-  for (let i = 0; i < data.length; i++) {
-    for (let j = i + 1; j < data.length; j++) {
+function bubbleSort() {
+  for (let i = 0; i < size; i++) {
+    for (let j = i + 1; j < size; j++) {
       if (data[i] > data[j]) {
-        temp = data[i];
-        data[i] = data[j];
-        data[j] = temp;
+        swap(i, j);
       }
     }
   }
   display();
-  console.log(data);
+}
+
+function selectionSort() {
+  for (let i = 0; i < size - 1; i++) {
+    let min_index = i;
+    for (let j = i; j < size; j++) {
+      if (data[j] < data[min_index]) min_index = j;
+      swap(i, min_index);
+    }
+  }
+  display();
+}
+
+function swap(i, j) {
+  let temp = data[i];
+  data[i] = data[j];
+  data[j] = temp;
 }
 
 function sort() {
   const op = document.querySelector(".sortMethods").value;
-  switch(op){
-    case 'bubble':
-      bubbleSort()
+  switch (op) {
+    case "bubble":
+      bubbleSort();
+      break;
+    case "selection":
+      selectionSort();
       break;
     default:
       alert("No such method");

@@ -1,6 +1,7 @@
 var data = null;
+var size = null;
 const grid = document.querySelector(".rightup");
-const rough = [12,54,1211,65,324,231,652,341]
+const rough = [12, 54, 1211, 65, 324, 231, 652, 341];
 function read() {
   let squares = [];
   data = document.querySelector(".array").value;
@@ -9,6 +10,7 @@ function read() {
   for (let i = 0; i < size; i++) {
     data[i] = parseInt(data[i]);
   }
+  size = data.length;
   display();
 }
 
@@ -20,5 +22,4 @@ function display() {
     square.append(data[i]);
     grid.appendChild(square);
   }
-  console.log(search);
 }
