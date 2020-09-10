@@ -1,8 +1,10 @@
+const size = data.length;
+
 function linearSearch(num) {
   let flag = false;
   indexes = [];
   let i = 0;
-  for (i = 0; i < data.length; i++) {
+  for (i = 0; i < size; i++) {
     if (num == data[i]) {
       indexes.push(i);
       flag = true;
@@ -34,10 +36,13 @@ function binarySearch(num) {
     : alert("Not Found");
 }
 
+function jumpSearch(n) {
+  console.log("Jump Search");
+}
+
 function search() {
   const op = document.querySelector(".searchMethods").value;
   const num = parseInt(document.querySelector(".number").value);
-  let index = -1;
 
   switch (op) {
     case "linear":
@@ -46,6 +51,8 @@ function search() {
     case "binary":
       binarySearch(num);
       break;
+    case "jump":
+      jumpSearch(num);
     default:
       alert("Method not found");
   }
