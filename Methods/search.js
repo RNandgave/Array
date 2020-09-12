@@ -1,5 +1,3 @@
-const size = data.length;
-
 function linearSearch(num) {
   let flag = false;
   indexes = [];
@@ -37,7 +35,28 @@ function binarySearch(num) {
 }
 
 function jumpSearch(n) {
-  console.log("Jump Search");
+  insertionSort();
+  let curr = 0;
+  let step = parseInt(Math.floor(Math.sqrt(size)));
+  flag = false;
+
+  while (data[step] < n && curr < n) {
+    curr = step += step;
+    if (step > size - 1) {
+      alert("Number Not found");
+      return;
+    }
+  }
+
+  for (let i = curr; i < step; i++) {
+    if (data[i] == n) {
+      flag = true;
+      break;
+    }
+  }
+  flag == true
+    ? (document.getElementById("" + mid).style.backgroundColor = "red")
+    : alert("Not Found");
 }
 
 function search() {
