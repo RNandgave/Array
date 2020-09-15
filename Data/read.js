@@ -5,6 +5,9 @@ const grid = document.querySelector(".rightup");
 function read() {
   let squares = [];
   data = document.querySelector(".array").value;
+  if (data == NaN) {
+    alert("Enter numbers seperated by ','");
+  }
   data = data.split(",");
   size = data.length;
   for (let i = 0; i < size; i++) {

@@ -34,6 +34,64 @@ function insertionSort() {
   }
   display();
 }
+// p: start , q: mid, r: end
+function merge(array, p, q, r) {
+  let n1 = q - p + 1;
+  let n2 = r - q;
+  let L = [];
+  let R = [];
+  let i = 0;
+  let j = 0;
+  let k = 0;
+
+  for (i = 0; i < n1; i++) {
+    L[i] = array[p + i];
+  }
+  for (j = 0; j < n2; j++) {
+    R[j] = array[q + 1 + j];
+  }
+  L[n1] = -Infinity;
+  R[n2] = -Infinity;
+  i = 0;
+  j = 0;
+  k = p;
+  while (i < n1 && j < n2) {
+    if (L[i] <= R[j]) {
+      array[k] = L[i];
+      i++;
+    } else {
+      array[k] = R[j];
+      j++;
+    }
+    k++;
+  }
+
+  while (i < n1) {
+    array[k] = L[i];
+    i++;
+    k++;
+  }
+  while (j < n2) {
+    array[k] = R[j];
+    j++;
+    k++;
+  }
+  /*
+  console.log({
+    PQR: [p, q, r],
+    data: array,
+    l: L,
+    r: R,
+  });*/
+}
+function mergeSort(array, p, r) {
+  if (p < r) {
+    let q = parseInt((p + r) / 2);
+    mergeSort(array, p, q);
+    mergeSort(array, q + 1, r);
+    merge(array, p, q, r);
+  }
+}
 
 function swap(i, j) {
   let temp = data[i];
@@ -52,6 +110,14 @@ function sort() {
       break;
     case "insertion":
       insertionSort();
+      break;
+    case "merge":
+      let start = 0;
+      let end = size - 1;
+      let array = [...data];
+      mergeSort(array, start, end);
+      data = array;
+      display();
       break;
     default:
       alert("No such method");

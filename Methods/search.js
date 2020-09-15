@@ -11,7 +11,6 @@ function linearSearch(num) {
   for (i = 0; i < indexes.length; i++) {
     document.getElementById("" + indexes[i]).style.backgroundColor = "red";
   }
-  // console.log(flag? `element present at ${indexes}`: "Not found");
 }
 
 function binarySearch(num) {
@@ -35,27 +34,70 @@ function binarySearch(num) {
 }
 
 function jumpSearch(n) {
+  console.log("before Sort");
   insertionSort();
+  console.log("after sort");
   let curr = 0;
   let step = parseInt(Math.floor(Math.sqrt(size)));
   flag = false;
 
-  while (data[step] < n && curr < n) {
-    curr = step += step;
+  while (data[step] < n && curr < size) {
+    curr = step;
+    step += step;
+    console.log({ current: data[curr], size: step });
     if (step > size - 1) {
-      alert("Number Not found");
-      return;
+      step = size;
+      break;
     }
   }
-
-  for (let i = curr; i < step; i++) {
+  let i = 0;
+  for (i = curr; i < step; i++) {
     if (data[i] == n) {
       flag = true;
       break;
     }
   }
-  flag == true
-    ? (document.getElementById("" + mid).style.backgroundColor = "red")
+  flag
+    ? (document.getElementById("" + i).style.backgroundColor = "red")
+    : alert("Not Found");
+}
+
+//If array is highly skewed then its not possible to search through
+function interpolationSearch(n) {
+  bubbleSort();
+  let lo = 0;
+  let hi = size - 1;
+  let flag = false;
+  let k = 0;
+  while (lo <= hi && n >= data[lo] && n <= data[hi]) {
+    if (k > 10) {
+      break;
+    }
+    k++;
+    if (lo == hi) {
+      if (data[lo] == n) {
+        flag = true;
+      } else {
+        break;
+      }
+    }
+    let numer = hi - lo;
+    let denom = data[hi] - data[lo];
+    let exten = n - data[lo];
+    pos = Math.ceil((numer / denom) * exten);
+    console.log({ h: hi, l: lo, po: pos });
+
+    if (data[pos] == n) {
+      flag = true;
+      break;
+    } else if (data[pos] < n) {
+      lo = pos + 1;
+    } else {
+      hi = pos - 1;
+    }
+  }
+  flag
+    ? (document.getElementById("" + pos).style.backgroundColor = "red")
     : alert("Not Found");
 }
 
@@ -72,6 +114,10 @@ function search() {
       break;
     case "jump":
       jumpSearch(num);
+      break;
+    case "interpolation":
+      interpolationSearch(num);
+      break;
     default:
       alert("Method not found");
   }
