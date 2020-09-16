@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
     <meta charset="utf-8" />
     <title>ARRAYS</title>
   </head>
@@ -10,16 +11,19 @@
       <div class="left">
         <div class="leftup">
           <div class="input">
+            <br>
+            <br>
             <h3>Input</h3>
             <form class="container" action="index.html" method="post">
               <b> Enter array elements seperated by ','</b>
               <br />
-              <input class="array" type="text" name="array1" value="" />
-              <button type="button" name="button" onclick="read()">Read</button>
+              <input class="comInput array" type="text" name="array1" value="" />
+              <button class="comButton" type="button" name="button" onclick="read()"><i class="fas fa-plus-square"></i></button>
               <br />
-              <button type="button" name="button" onclick="display()">
+              <br>
+              <!--<button class="comButton" type="button" name="button" onclick="display()">
                 DISPLAY
-              </button>
+              </button>-->
               <br />
               <br>
               <br>
@@ -28,18 +32,20 @@
               <div class="sort">
                 SORT METHODS: <br />
                 Select Algorithm <br>
-                <select class="sortMethods" name="sorting" id="sortM">
+                <select class="comInput sortMethods" name="sorting" id="sortM">
                   <option value="bubble">Bubble Sort</option>
                   <option value="selection">Selection Sort</option>
                   <option value="insertion">Insertion Sort</option>
                   <option value="merge">Merge Sort</option>
+                  <option value="quick">Quick Sort</option>
                 </select>
-                <button type="button" name="button" onclick="sort()">sort</button>
+                <button class="comButton" type="button" name="button" onclick="sort()"><i class="fas fa-arrow-alt-circle-down"></i></button>
+                <button class="comButton" type="button" name="button" onclick="sort()"><i class="fas fa-arrow-alt-circle-up"></i></button>
               </div>
               <div class="search">
                   SEARCH METHODS: <br>
-                  Select algorithms
-                  <select class="searchMethods" name="searching" id="searchM">
+                  Select algorithms<br>
+                  <select class="comInput searchMethods" name="searching" id="searchM">
                     <option value="linear">Linear Search</option>
                     <option value="binary">Binary Search</option>
                     <option value="jump">Jump Search</option>
@@ -48,8 +54,8 @@
                   <br>
                 Enter value to search
                 <br>
-                <input class="number" type="text" name="" value="" />
-                <button type="button" name="button" onclick="search()">Search</button>
+                <input class="comInput number"  type="text" name="" value="" />
+                <button class="comButton" type="button" name="button" onclick="search()"><i class="fa fa-search"></i></button>
               </div>
             </div>
 

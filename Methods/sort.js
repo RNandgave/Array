@@ -93,6 +93,28 @@ function mergeSort(array, p, r) {
   }
 }
 
+function partition(data, low, high) {
+  pivot = data[high];
+  i = low - 1;
+  for (j = low; j <= high; j++) {
+    if (data[j] < pivot) {
+      i++;
+      swap(i, j);
+    }
+  }
+  swap(i + 1, high);
+  console.log({ d: data, l: low, h: high, p: pivot });
+  return i + 1;
+}
+
+function quickSort(data, low, high) {
+  if (low < high) {
+    pi = partition(data, low, high);
+    quickSort(data, low, pi - 1);
+    quickSort(data, pi + 1, high);
+  }
+}
+
 function swap(i, j) {
   let temp = data[i];
   data[i] = data[j];
@@ -117,6 +139,10 @@ function sort() {
       let array = [...data];
       mergeSort(array, start, end);
       data = array;
+      display();
+      break;
+    case "quick":
+      quickSort(data, 0, data.length);
       display();
       break;
     default:
