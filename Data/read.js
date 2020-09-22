@@ -14,6 +14,7 @@ function read() {
     data[i] = parseInt(data[i]);
   }
   size = data.length;
+  updateChart();
   display();
 }
 
@@ -25,4 +26,9 @@ function display() {
     square.append(data[i]);
     grid.appendChild(square);
   }
+}
+
+function updateChart() {
+  indiceChart.data.datasets[0].data = data;
+  indiceChart.update();
 }
