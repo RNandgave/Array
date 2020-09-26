@@ -5,13 +5,15 @@ let label = [];
 let indiceChart = new Chart(myChart, {
   type: "bar",
   data: {
-    labels: ["1", "2", "3", "4", "5", "6"],
+    labels: chartLabels, //["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
     datasets: [
       {
         label: "Array",
         data: oldData,
         borderColor: "rgb(0,199,23",
         backgroundColor: "black",
+        borderWidth: 2,
+        barThickness: 3,
       },
     ],
   },
@@ -19,12 +21,7 @@ let indiceChart = new Chart(myChart, {
 });
 
 function updateChart() {
-  for (let i = 0; i < size; i++) {
-    label.concat(i + 1 + "");
-  }
-  console.log({ L: label, d: data });
-
   indiceChart.data.datasets[0].data = data;
-  indiceChart.data.labels = label;
+  indiceChart.data.labels.push(label);
   indiceChart.update();
 }

@@ -1,6 +1,7 @@
 var data = null;
 var size = null;
 const grid = document.querySelector(".rightup");
+var chartLabels = [];
 
 function read() {
   let squares = [];
@@ -12,10 +13,11 @@ function read() {
   size = data.length;
   for (let i = 0; i < size; i++) {
     data[i] = parseInt(data[i]);
+    chartLabels.push("" + i);
   }
   size = data.length;
-  updateChart();
   display();
+  console.log({ L: chartLabels, D: data });
 }
 
 function display() {
@@ -26,9 +28,5 @@ function display() {
     square.append(data[i]);
     grid.appendChild(square);
   }
-}
-
-function updateChart() {
-  indiceChart.data.datasets[0].data = data;
-  indiceChart.update();
+  updateChart();
 }
