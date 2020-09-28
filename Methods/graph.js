@@ -3,14 +3,14 @@ let oldData = [10, 10, 10, 10, 10, 10];
 let label = [];
 
 let indiceChart = new Chart(myChart, {
-  type: "bar",
+  type: "line",
   data: {
     labels: chartLabels, //["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"],
     datasets: [
       {
         label: "Array",
         data: oldData,
-        borderColor: "rgb(0,199,23",
+        borderColor: "rgb(0,199,23)",
         backgroundColor: "black",
         borderWidth: 2,
         barThickness: 3,

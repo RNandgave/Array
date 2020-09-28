@@ -85,6 +85,7 @@ function merge(array, p, q, r) {
   });*/
 }
 function mergeSort(array, p, r) {
+  highlight(p,r);
   if (p < r) {
     let q = parseInt((p + r) / 2);
     mergeSort(array, p, q);

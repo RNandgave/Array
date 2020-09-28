@@ -17,16 +17,30 @@ function read() {
   }
   size = data.length;
   display();
-  console.log({ L: chartLabels, D: data });
 }
 
 function display() {
   grid.innerHTML = "";
   for (let i = 0; i < data.length; i++) {
     const square = document.createElement("div");
-    square.setAttribute("id", i);
+    square.setAttribute("id", "i"+i);
     square.append(data[i]);
     grid.appendChild(square);
   }
   updateChart();
+  //highlight(6,0)
+}
+
+
+function highlight(i,j){
+  console.log("Inised highlight");
+  iindex = document.querySelector("#i"+i);
+  jindex = document.querySelector("#i"+j);
+  iindex.style.backgroundColor = "lightgreen";
+  jindex.style.backgroundColor = "lightgreen";
+  setTimeout(()=>{
+    iindex.style.backgroundColor = "white";
+    jindex.style.backgroundColor = "white";
+  },250)
+
 }
