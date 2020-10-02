@@ -22,6 +22,7 @@ function read() {
 function display() {
   grid.innerHTML = "";
   for (let i = 0; i < data.length; i++) {
+    const inner = document.createElement("div");
     const pair = document.createElement("div");
     const square = document.createElement("div");
     const index = document.createElement("div");
@@ -31,6 +32,7 @@ function display() {
     index.setAttribute("id", "index"+i);
     index.setAttribute("class", "back")
     pair.setAttribute("class", "pair");
+    inner.setAttribute("class","inner");
 
     square.append(data[i]);
     index.append(i+1);
@@ -38,7 +40,9 @@ function display() {
     pair.appendChild(square);
     pair.appendChild(index);
 
-    grid.appendChild(pair);
+    inner.appendChild(pair);
+
+    grid.appendChild(inner);
   }
   updateChart();
   //highlight(6,0)
