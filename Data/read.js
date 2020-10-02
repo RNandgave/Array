@@ -45,7 +45,7 @@ function display() {
     grid.appendChild(inner);
   }
   updateChart();
-  //highlight(6,0)
+  highlight(6,0)
 }
 
 

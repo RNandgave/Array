@@ -143,7 +143,7 @@ function sort() {
       display();
       break;
     case "quick":
-      quickSort(data, 0, data.length);
+      quickSort(data, 0, data.length-1);
       display();
       break;
     default:

@@ -1,6 +1,6 @@
 function linearSearch(num) {
   let flag = false;
-  indexes = [];
+  let indexes = [];
   let i = 0;
   for (i = 0; i < size; i++) {
     if (num == data[i]) {
@@ -9,7 +9,7 @@ function linearSearch(num) {
     }
   }
   for (i = 0; i < indexes.length; i++) {
-    document.getElementById("" + indexes[i]).style.backgroundColor = "red";
+    document.getElementById(".pair>" + indexes[i]).style.backgroundColor = "red";
   }
 }
 
