@@ -6,7 +6,7 @@ var chartLabels = [];
 function read() {
   let squares = [];
   data = document.querySelector(".array").value;
-  if (data == NaN) {
+  if (data === NaN) {
     alert("Enter numbers seperated by ','");
   }
   data = data.split(",");
@@ -22,10 +22,23 @@ function read() {
 function display() {
   grid.innerHTML = "";
   for (let i = 0; i < data.length; i++) {
+    const pair = document.createElement("div");
     const square = document.createElement("div");
+    const index = document.createElement("div");
+
     square.setAttribute("id", "i"+i);
+    square.setAttribute("class", "front");
+    index.setAttribute("id", "index"+i);
+    index.setAttribute("class", "back")
+    pair.setAttribute("class", "pair");
+
     square.append(data[i]);
-    grid.appendChild(square);
+    index.append(i+1);
+
+    pair.appendChild(square);
+    pair.appendChild(index);
+
+    grid.appendChild(pair);
   }
   updateChart();
   //highlight(6,0)
