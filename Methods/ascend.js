@@ -117,6 +117,36 @@ function quickSort(data, low, high) {
   }
 }
 
+function countSort(){
+  let ma = Math.max(...data);
+  let mi = Math.min(...data);
+  let count = [];
+  let output = [];
+
+  for(i = 0; i<ma; i++){
+    count.push(0);
+  }
+  output = [...data];
+
+  for(let i = 0; i<size; i++){
+    count[data[i]-mi]++;
+  }
+
+  for(let i = 1; i<count.length; i++){
+    count[i] += count[i-1];
+  }
+
+  for(let i=size-1; i>=0; i--){
+    output[count[data[i]-mi]-1]=data[i];
+    count[data[i]-mi]--;
+  }
+
+  for(let i = 0; i<size; i++){
+    data[i] = output[i];
+  }
+  display();
+}
+
 function swap(i, j) {
   let temp = data[i];
   data[i] = data[j];
@@ -142,6 +172,9 @@ function ascend() {
     case "quick":
       quickSort(data, 0, size-1);
       display();
+      break;
+    case "count":
+      countSort();
       break;
     default:
       alert("No such method");

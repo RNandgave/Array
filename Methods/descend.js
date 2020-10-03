@@ -117,6 +117,39 @@ function dquickSort(data, low, high) {
   }
 }
 
+function dcountSort(){
+    let ma = Math.max(...data);
+    let mi = Math.min(...data);
+    let count = [];
+    let output = [];
+
+    for(i = 0; i<ma; i++){
+      count.push(0);
+    }
+    output = [...data];
+
+    for(let i = 0; i<size; i++){
+      count[ma - data[i]]++;
+    }
+
+    for(let i = 1; i<count.length; i++){
+      count[i] += count[i-1];
+    }
+
+    for(let i=0; i<=size-1; i++){
+      output[count[ma-data[i]]]=data[i];
+      count[data[i]-mi]--;
+    }
+    console.log({o:output, c: count});
+
+    for(let i = 0; i<size; i++){
+      data[i] = output[i];
+    }
+
+    display();
+  }
+
+
 function descend() {
   const op = document.querySelector(".sortMethods").value;
   switch (op) {
@@ -136,6 +169,9 @@ function descend() {
     case "quick":
       dquickSort(data, 0, size-1);
       display();
+      break;
+    case "count":
+      dcountSort();
       break;
     default:
       alert("No such method");
