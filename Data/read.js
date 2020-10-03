@@ -32,6 +32,7 @@ function display() {
     index.setAttribute("id", "index"+i);
     index.setAttribute("class", "back")
     pair.setAttribute("class", "pair");
+    pair.setAttribute("id", "p"+i);
     inner.setAttribute("class","inner");
 
     square.append(data[i]);
@@ -44,20 +45,5 @@ function display() {
 
     grid.appendChild(inner);
   }
-  updateChart();
-  highlight(6,0)
-}
-
-
-function highlight(i,j){
-  console.log("Inised highlight");
-  iindex = document.querySelector("#i"+i);
-  jindex = document.querySelector("#i"+j);
-  iindex.style.backgroundColor = "lightgreen";
-  jindex.style.backgroundColor = "lightgreen";
-  setTimeout(()=>{
-    iindex.style.backgroundColor = "white";
-    jindex.style.backgroundColor = "white";
-  },250)
-
+  updateChart();  
 }

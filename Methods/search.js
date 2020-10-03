@@ -9,7 +9,8 @@ function linearSearch(num) {
     }
   }
   for (i = 0; i < indexes.length; i++) {
-    document.getElementById(".pair>" + indexes[i]).style.backgroundColor = "red";
+    console.log("p"+indexes[i]);
+    document.getElementById(("i" + indexes[i])).style.backgroundColor = "red";
   }
 }
 
@@ -29,7 +30,7 @@ function binarySearch(num) {
     } else end = mid - 1;
   }
   flag == true
-    ? (document.getElementById("" + mid).style.backgroundColor = "red")
+    ? (document.getElementById("i" + mid).style.backgroundColor = "red")
     : alert("Not Found");
 }
 
@@ -58,7 +59,7 @@ function jumpSearch(n) {
     }
   }
   flag
-    ? (document.getElementById("" + i).style.backgroundColor = "red")
+    ? (document.getElementById("i" + i).style.backgroundColor = "red")
     : alert("Not Found");
 }
 
@@ -97,7 +98,7 @@ function interpolationSearch(n) {
     }
   }
   flag
-    ? (document.getElementById("" + pos).style.backgroundColor = "red")
+    ? (document.getElementById("i" + pos).style.backgroundColor = "red")
     : alert("Not Found");
 }
 

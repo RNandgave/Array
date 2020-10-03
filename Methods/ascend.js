@@ -84,6 +84,7 @@ function merge(array, p, q, r) {
     r: R,
   });*/
 }
+
 function mergeSort(array, p, r) {
   highlight(p,r);
   if (p < r) {
@@ -122,7 +123,7 @@ function swap(i, j) {
   data[j] = temp;
 }
 
-function sort() {
+function ascend() {
   const op = document.querySelector(".sortMethods").value;
   switch (op) {
     case "bubble":
@@ -135,15 +136,11 @@ function sort() {
       insertionSort();
       break;
     case "merge":
-      let start = 0;
-      let end = size - 1;
-      let array = [...data];
-      mergeSort(array, start, end);
-      data = array;
+      mergeSort(data, 0, size-1);
       display();
       break;
     case "quick":
-      quickSort(data, 0, data.length-1);
+      quickSort(data, 0, size-1);
       display();
       break;
     default:

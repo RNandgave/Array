@@ -13,8 +13,6 @@
       <div class="left">
         <div class="leftup">
           <div class="input">
-            <br>
-            <br>
             <h3>Input</h3>
             <form class="container" action="index.html" method="post">
               <b> Enter array elements seperated by ','</b>
@@ -34,7 +32,7 @@
               <div class="sort">
                 SORT METHODS: <br />
                 Select Algorithm <br>
-                <button class="comButton" type="button" name="button" onclick="sort()"><i class="fas fa-arrow-alt-circle-down"></i></button>
+                <button class="comButton" type="button" name="button" onclick="ascend()"><i class="fas fa-arrow-alt-circle-down"></i></button>
                 <select class="comInput sortMethods" name="sorting" id="sortM">
                   <option value="bubble">Bubble Sort</option>
                   <option value="selection">Selection Sort</option>
@@ -42,7 +40,7 @@
                   <option value="merge">Merge Sort</option>
                   <option value="quick">Quick Sort</option>
                 </select>
-                <button class="comButton" type="button" name="button" onclick="sort()"><i class="fas fa-arrow-alt-circle-up"></i></button>
+                <button class="comButton" type="button" name="button" onclick="descend()"><i class="fas fa-arrow-alt-circle-up"></i></button>
               </div>
               <div class="search">
                   SEARCH METHODS: <br>
@@ -81,6 +79,7 @@
   <script type="text/javascript" src="Data/read.js"></script>
   <script type="text/javascript" src="Data/algorithms.js"></script>
   <script type="text/javascript" src="Methods/search.js"></script>
-  <script type="text/javascript" src="Methods/sort.js"></script>
+  <script type="text/javascript" src="Methods/ascend.js"></script>
+    <script type="text/javascript" src="Methods/descend.js"></script>
   <script type="text/javascript" src="Methods/graph.js"></script>
 </html>
