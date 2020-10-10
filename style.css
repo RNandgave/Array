@@ -48,19 +48,20 @@
   font-weight: bold;
   color: darkgreen;
   box-shadow: 0 0 rgba(0, 0, 0, 0.75);
+  position: sticky;
 }
 
 .rightbot {
   position: fixed;
   bottom: 0;
-  height: 60%;
+  height: 67%;
   width: 50%;
   background-color: whitesmoke;
 }
 
 .rightup {
   overflow: scroll;
-  height: 40%;
+  height: 33%;
   align-content: center;
   background-color: whitesmoke;
 }
@@ -70,27 +71,29 @@
 }
 
 .pair {
-    position: relative;
-    height: 30px;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    text-align: center;
-    background-color: transparent;
-    perspective: 1000px;
+  position: unset;
+  height: 30px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: transparent;
+  perspective: 1000px;
 }
 
-.inner:hover .pair{
+.inner:hover .pair {
   transform: rotateY(186deg);
 }
 
-.front, .back{
+.front,
+.back {
   position: inherit;
+  margin-left: 10px;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
-.front{
+.front {
   background-color: white;
   color: black;
   font-family: "Roboto Mono", monospace;
@@ -101,7 +104,7 @@
   color: black;
 }
 
-.back{
+.back {
   color: black;
   transform: rotateY(180deg);
 }
